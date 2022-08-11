@@ -1,0 +1,209 @@
+
+.main-head {
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 62px;
+  height: 100%;
+  z-index: 1;
+  background: #fff;
+  transition: width 400ms;
+  overflow: hidden;
+
+}
+
+.main-head:hover {
+  width: 200px;
+}
+
+.main-head:hover + {
+  transform: translateX(336px);
+  max-width: 100%;
+  opacity: 0.4;
+}
+
+.main-head:hover .p-sidebar span {
+  text-indent: 0;
+}
+
+:host ::ng-deep .pi {
+  font-size: 24px;
+}
+
+:host ::ng-deep .p-panelmenu {
+  border: none;
+  margin-top: 67px;
+
+
+}
+
+:host ::ng-deep .p-menu ul {
+  position: relative;
+  top: 80px;
+  color: black;
+
+
+}
+
+:host ::ng-deep .p-sidebar-left {
+  width: 0;
+}
+
+:host ::ng-deep .p-panelmenu .p-panelmenu-header-link .p-menuitem-icon {
+  color: black;
+  font-style: normal;
+  font-weight: 300;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+:host ::ng-deep .p-menuitem-link-active span {
+  color: #464DF2 !important;
+
+}
+
+:host ::ng-deep .p-panelmenu-header .p-menuitem-link-active::before {
+  color: #464DF2 !important;
+  content: "";
+  width: 4px;
+  height: 12px;
+  display: block;
+  border-radius: 0 3px 3px 0;
+  position: absolute;
+  left: 0;
+  background-color: #464DF2;
+}
+
+
+:host ::ng-deep  .p-panelmenu > a :hover {
+  background: #fff!important;
+
+}
+
+:host ::ng-deep .p-panelmenu .p-menuitem :focus {
+  box-shadow: none;
+}
+
+:host ::ng-deep .p-menuitem-text {
+  visibility: hidden;
+  font-family: Segoe UI, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0;
+  margin: 0 8px 0 24px;
+  font-weight: 600;
+  text-decoration: none solid rgb(70, 77, 242);
+  text-align: left;
+  text-indent: 0;
+}
+:host ::ng-deep span.p-menuitem-text{
+  display:inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:host ::ng-deep .show-text {
+  visibility: visible !important;
+}
+
+:host ::ng-deep a:hover span {
+  color: #464DF2 !important;
+}
+
+:host ::ng-deep .menu-wrapper {
+  max-height: 71px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+:host ::ng-deep .pi-chevron-right, :host ::ng-deep .pi-chevron-down {
+  display: none;
+  font-size: 0.9rem;
+}
+
+:host ::ng-deep .p-panelmenu .p-panelmenu-header > a {
+  border: none;
+  background: #fff;
+  box-shadow: none;
+  padding: 0.75rem 1.25rem;
+}
+
+:host ::ng-deep .p-menuitem-link {
+  border: none;
+  background: #fff;
+  box-shadow: none;
+  transition: none;
+  padding: 0!important;
+  display: inline-flex!important;
+}
+
+:host ::ng-deep .p-panelmenu .p-panelmenu-content {
+  border: none;
+}
+:host ::ng-deep .p-panelmenu-icon {
+  order: 1;
+}
+:host ::ng-deep .p-menuitem-text {
+  flex-grow: 1;
+}
+
+:host ::ng-deep div :hover {
+ background-color: #fff!important;
+}
+:host ::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon {
+
+  font-size:13px!important;
+  color: black;
+  font-weight: normal;
+  padding-left: 25px!important;
+}
+
+:host ::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text{
+  padding-left: 9px!important;
+  font-size:12px;
+}
+:host ::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
+
+  box-shadow: none;
+}
+:host ::ng-deep .p-sidebar .p-sidebar-header + .p-sidebar-content {
+  padding-top: 0;
+  top: 29px;
+  position: relative;
+  width: 55px;
+  overflow: hidden;
+  left: 113px;
+}
+
+.pin {
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+
+
+}
+
+.sidebar-pin {
+  left: 169px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 99999;
+  top: 69px;
+  height: 146px;
+}
+

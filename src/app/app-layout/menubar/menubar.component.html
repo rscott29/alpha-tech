@@ -1,0 +1,25 @@
+<p-menubar [model]="(menuItems$ | async)!" styleClass="light-panel parent">
+
+  <ng-template pTemplate="start">
+    <img alt="site logo" class="logo" src="assets/images/Alpha-Logo-NoText.png">
+
+  </ng-template>
+  <app-search></app-search>
+
+  <p-menu #menu [model]="profileItems" [popup]="true"></p-menu>
+
+  <button (click)="menu.toggle($event)" class="p-button search-button" pButton style="padding: 6px;" type="button">
+    <p-avatar
+      icon="pi pi-user"
+      shape="circle"
+      size="medium"
+      styleClass="p-mr-2"
+    ></p-avatar>
+  </button>
+
+  <button (click)='showRightPanel()' class="p-button right-panel search-button" icon="pi pi-arrow-left" pButton
+          type="button">
+
+  </button>
+</p-menubar>
+

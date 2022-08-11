@@ -1,0 +1,31 @@
+
+<div class="main-head">
+  <a  class="sidebar-pin">
+    <span #pinElement class="pin"></span>
+  </a>
+  <p-sidebar
+    #sideMenu
+    [ngClass]="{'show-text': sideNavActive}"
+    class ='main-head'
+    [(visible)]="display"
+    [styleClass]="'sideNav'"
+    [modal]="false"
+    [showCloseIcon]="false"
+    (mouseenter)="showText()"
+    (mouseleave)="hideText()"
+  >
+
+    <p-panelMenu  class="main-head" [model]="sideNavItems">
+
+
+    </p-panelMenu>
+
+
+
+
+  </p-sidebar>
+
+
+
+
+</div>

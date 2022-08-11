@@ -1,0 +1,26 @@
+
+.layout-main {
+  display: flex;
+//  flex-direction: column;
+  padding-left: 62px;
+}
+.layout-main .layout-content{
+  width: 100%;
+}
+.layout-main  aside {
+  width: 0;
+  overflow-y: auto;
+  transition: all 0.5s;
+  background-color: yellow;
+
+}
+.layout-content {
+  height: calc(100vh - 152px);
+  background: RGB(238, 240, 242);
+  text-align: center;
+  padding: 0;
+  flex: 1 1 auto;
+}
+.layout-main:hover aside{
+  width: 100px;
+}
