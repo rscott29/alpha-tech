@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+body {
+  display: flex;
+  flex-direction: column;
 }
+
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+
 .logo-text {
   right: 80px;
   color: #000;
@@ -14,4 +20,8 @@
   background-color: #fff!important;
   box-shadow: none!important;
 
+}
+.lock-button {
+  right: 80px;
+  z-index: 99999;
 }

@@ -11,6 +11,6 @@ describe('MenubarService', () => {
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service).exist
   });
 });

@@ -1,22 +1,26 @@
-.layout-footer .footer-bottom {
-  display: flex;
-  align-items: center;
 
+:host {
+  padding: 30px;
 }
-
-.layout-footer {
-  padding: 30px 36px;
-  background-color: #eef0f2;
+.footer {
+  z-index: 999;
 }
-
-.layout-footer .footer-bottom h4 {
+.title {
+  font-weight: 600;
+  color: RGBA(41, 50, 65, 0.8);
+  font-size: 21px;
+  font-family: Segoe UI, serif;
   line-height: 22px;
-  margin: 0 32px 0 50px;
+  margin: 0 32px 0 0;
+  display: inline-block;
 }
+.cc {
 
-.layout-footer .footer-bottom h6 {
-  line-height: 17px;
-  margin: 0;
-  color: rgba(41, 50, 65, 0.5);
-  font-weight: 500;
+  font-family: Segoe UI, serif;
+  font-size: 12px;
+  height: auto;
+  right: 24px;
+  position: relative;
+  bottom: 2px;
+
 }

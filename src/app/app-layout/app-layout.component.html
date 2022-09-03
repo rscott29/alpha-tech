@@ -1,17 +1,12 @@
 
+<app-menubar fxLayout="column"></app-menubar>
 
-<app-menubar></app-menubar>
-
-<app-sidenav></app-sidenav>
-<section class="layout-main">
-<!--  <aside></aside>-->
-  <div class="layout-content">
-
-    <app-breadcrumb></app-breadcrumb>
+<div fxLayout="row" fxFlex="100">
+  <app-sidenav fxLayout="column" fxFlex="62px"></app-sidenav>
+  <div class="content" fxLayout="column" fxFlex>
     <router-outlet></router-outlet>
-
-
   </div>
-</section>
+</div>
+
+<app-footer fxLayout="column" fxFlex="80px"></app-footer>
 <app-right-panel></app-right-panel>
-<app-footer></app-footer>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NotificationService} from "../services/notifications/notification.service";
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
   }
+  onConfirm() {
+    this.notificationService.onConfirm()
+  }
 
+  onReject() {
+    this.notificationService.onReject();
+  }
 }

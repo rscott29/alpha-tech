@@ -16,6 +16,8 @@ export class MenubarComponent implements OnInit {
   menuItems$!: Observable<MenuItem[]> ;
   profileItems!:  MenuItem[];
   searchString!: string;
+  checked: any;
+  leftPanelActive! :Observable<boolean>;
 
 
 
@@ -25,7 +27,7 @@ export class MenubarComponent implements OnInit {
     this.menuItems$ = this.menuBarService.getNodes(environment.menuItemsPath);
     this.profileItems = [       {label: 'Add User', icon: 'pi pi-fw pi-user-plus'},
       {label: 'Remove User', icon: 'pi pi-fw pi-user-minus'}]
-
+    this.leftPanelActive = this.panelsService.showLeftPanel$
 
   }
 

@@ -7,22 +7,14 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'app-sidenav', templateUrl: './sidenav.component.html', styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements AfterViewInit, OnDestroy {
+export class SidenavComponent implements AfterViewInit {
   display: boolean = true;
   sideNavActive!: boolean;
   menuItems!: NodeListOf<Element>
   chevronIcons!: HTMLElement[]
   @ViewChild('sideMenu') sideMenu!: Sidebar
-  @ViewChild('pinElement')
-  private pinElement!: ElementRef;
-  globalInstance: any;
-  leftPanelActive! :Observable<boolean>;
-  private pinHovered: boolean = false;
 
-  constructor(private panelsService: PanelsService, private renderer: Renderer2) {
-    this.leftPanelActive = this.panelsService.showLeftPanel$
-
-  }
+  constructor(private panelsService: PanelsService) {}
 
 
   sideNavItems = [{
@@ -38,18 +30,12 @@ export class SidenavComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.chevronIcons = this.sideMenu.el.nativeElement.querySelectorAll('.pi-chevron-right, .pi-chevron-down')
-    this.globalInstance = this.renderer.listen(this.pinElement.nativeElement, 'mouseover', () => {
-      console.log('hovering over pin')
-      this.pinHovered = true
-        this.showText()
-    });
+
   }
 
   showText() {
-
+    this.panelsService.leftPanelActivated()
     this.sideNavActive = true;
-    console.log(this.sideNavActive)
-    this.panelsService.leftPanelActivated();
     this.menuItems = this.sideMenu.el.nativeElement.querySelectorAll('.p-menuitem-text')
     this.chevronIcons.forEach((icon) => {
       icon.style.display = 'inline-flex'
@@ -60,17 +46,14 @@ export class SidenavComponent implements AfterViewInit, OnDestroy {
   }
 
   hideText() {
-    this.sideNavActive = false;
     this.panelsService.leftPanelDeactivated()
+    this.sideNavActive = false;
     this.chevronIcons.forEach((icon: { style: { display: string; }; }) => {
       icon.style.display = 'none';
     })
-    if (!this.sideNavActive && !this.pinHovered) {
-      console.log(this.sideNavActive)
+    if (!this.sideNavActive) {
       this.menuItems.forEach((item) => item.classList.remove('show-text'));
     }
   }
-  ngOnDestroy(): void {
-    this.globalInstance();
-  }
+
 }

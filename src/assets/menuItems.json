@@ -1,5 +1,11 @@
 [
   {
+    "label": "",
+    "icon": "pi pi-unlock",
+    "styleClass" : "lock-button",
+    "escape": false
+  },
+  {
     "label": "<h2>AlphaTech</h2>",
     "styleClass" : "logo-text",
     "escape": false

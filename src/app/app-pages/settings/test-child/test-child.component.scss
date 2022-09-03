@@ -1,0 +1,11 @@
+.container {
+margin: 0!important;
+}
+:host ::ng-deep .p-card {
+  height: 100%;
+  display: flex;
+  padding: 10px; /* gutter width */
+}
+:host ::ng-deep .p-card-body {
+  flex: 0 0 100%;
+}
