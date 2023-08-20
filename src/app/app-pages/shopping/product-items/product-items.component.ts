@@ -70,12 +70,10 @@ export class ProductItemsComponent implements OnInit, AfterViewInit, OnDestroy {
     //     this.min,
     //     this.max]
     // })
-    const count = signal(0);
 
-    console.log(count()); // 0
 
-    count.set(1);
-    count.set(2);
+
+
 
     this.products$ = merge(initialProducts$, updates$);
     this.getDataOnce().subscribe((products: Product[]) => {
