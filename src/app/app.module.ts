@@ -16,6 +16,9 @@ import {GlobalErrorHandler} from "./services/error/global-error-handler";
 import {ServerErrorInterceptor} from "./interceptors/server-error.interceptor";
 import {ButtonModule} from "primeng/button";
 import {FlexModule} from "@angular/flex-layout";
+import {RxStompService} from "./rx-stomp.service";
+import {rxStompServiceFactory} from "./rx-stomp-service-factory";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,6 +29,7 @@ import {FlexModule} from "@angular/flex-layout";
         AppRoutingModule,
         HttpClientModule,
         RouterModule,
+        ReactiveFormsModule,
         AppLayoutModule,
         ToastModule,
         ButtonModule,
@@ -42,7 +46,11 @@ import {FlexModule} from "@angular/flex-layout";
   providers: [
     MessageService,
     {provide: ErrorHandler, useClass: GlobalErrorHandler},
-    {provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true},
+    {
+      provide: RxStompService,
+      useFactory: rxStompServiceFactory,
+    },
   ],
   exports: [AppLayoutComponent],
   bootstrap: [AppComponent]

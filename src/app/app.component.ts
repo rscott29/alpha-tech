@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 
 import {PrimeNGConfig} from "primeng/api";
 import {allPositions, NotificationService} from "./services/notifications/notification.service";
+import {RxStompService} from "./rx-stomp.service";
+
 
 @Component({
   selector: 'app-root',
@@ -13,9 +15,12 @@ export class AppComponent implements OnInit {
   title = 'angular-proj';
   allPositions = allPositions
 
+
   constructor(private http: HttpClient, private notificationService: NotificationService, private primengConfig: PrimeNGConfig) {
 
     this.primengConfig.ripple = true;
+
+
   }
 
 
@@ -27,7 +32,12 @@ export class AppComponent implements OnInit {
     this.http.get('urlhere').subscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+
+
 
   success() {
     this.notificationService.showSuccess('good job', 'tl')
@@ -48,7 +58,6 @@ export class AppComponent implements OnInit {
   custom() {
     this.notificationService.showCustom('custom foo', 'tc')
   }
-
 
 
 

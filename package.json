@@ -26,6 +26,7 @@
     "@angular/platform-server": "^14.1.0",
     "@angular/router": "^14.1.0",
     "@nrwl/angular": "^14.5.4",
+    "@stomp/rx-stomp": "^1.1.4",
     "ngx-logger": "^5.0.11",
     "primeflex": "^3.2.1",
     "primeicons": "^5.0.0",
@@ -35,8 +36,8 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.1.1",
-    "@angular/cli": "~14.1.1",
+    "@angular-devkit/build-angular": "^14.2.1",
+    "@angular/cli": "~14.2.1",
     "@angular/compiler-cli": "^14.1.0",
     "@cypress/schematic": "^2.0.2",
     "@types/jasmine": "~4.0.0",

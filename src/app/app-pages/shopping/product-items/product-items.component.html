@@ -1,0 +1,72 @@
+<form [formGroup]="filterForm">
+<div class="grid nested-grid">
+
+  <div class="col-12 md:col-12 lg:col-3">
+    <div class="p-2">
+
+      <p-accordion>
+        <p-accordionTab header="Categories">
+          <p-multiSelect [options]="categories" defaultLabel="Filter by Product"
+                         optionLabel="label"
+                         display="chip" (onChange)="filter($event, 'category')" formControlName="catergory"></p-multiSelect>
+        </p-accordionTab>
+        <p-accordionTab header="Price Range">
+          <p-slider (onSlideEnd)="filter($event, 'priceRange')" [min]=min [max]=max [(ngModel)]="rangeValues"
+                    [range]="true"></p-slider>
+          <h5 *ngIf="rangeValues">Between: {{'£' + rangeValues[0] + ' - ' + '£' + rangeValues[1] }}</h5>
+        </p-accordionTab>
+        <p-accordionTab header="Average Rating">
+          <p-rating [(ngModel)]="averageRatingFilter" [cancel]="false"
+                    (onRate)="filter($event, 'averageRating')" formControlName="averageReview"></p-rating>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
+
+  <div class="col-12 md:col-12 lg:col-9">
+    <div class="grid">
+      <div class="col-12 md:col-12 lg:col-3 xl:col-3" *ngFor="let product of products$ | async">
+        <div class="shadow-2 p-4 surface-card border-round">
+          <div class="relative mb-3 cell">
+            <span class="surface-card text-900 shadow-2 px-3 py-2 absolute card-sm-text"
+                  style="border-radius: 1.5rem; left: 1rem; top: 1rem;">{{product.category | titlecase}}</span>
+            <img src="{{product.imageUrl}}" class="w-full min-h-full" alt="image of displayed product">
+          </div>
+          <div class="flex justify-content-between align-items-center mb-3">
+            <span class="text-900 font-medium text-xl">{{product.name | titlecase}}</span>
+            <span>
+                        <p-rating [(ngModel)]="averageRating" [readonly]=true [stars]=product.averageRating
+                                  [cancel]="false"></p-rating>
+                      </span>
+          </div>
+          <p class="mt-0 mb-3 text-600 line-height-3 card-sm-text"> {{product.description}} </p>
+          <span class="text-primary text-xl font-medium">{{product.price | currency: 'GBP'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</form>
+
+<p-toast position="top-right" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="flex flex-column" style="flex: 1">
+      <div class="text-center">
+        <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+        <h4>{{message.summary}}</h4>
+        <p>{{message.detail}}</p>
+
+      </div>
+      <div class="grid p-fluid">
+        <div class="col-6">
+          <button type="button" pButton (click)="forceReload()" label="Yes" class="p-button-success"></button>
+        </div>
+        <div class="col-6">
+          <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>
+

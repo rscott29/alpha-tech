@@ -20,6 +20,7 @@ export class SearchComponent {
     }
   }
   toggleShowDiv() {
+    console.log('cliocku')
     this.showSearch = !this.showSearch;
   }
 }

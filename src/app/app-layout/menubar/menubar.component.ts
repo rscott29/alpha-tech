@@ -13,21 +13,14 @@ import {PanelsService} from "../../panels.service";
 
 export class MenubarComponent implements OnInit {
 
-  menuItems$!: Observable<MenuItem[]> ;
-  profileItems!:  MenuItem[];
-  searchString!: string;
-  checked: any;
-  leftPanelActive! :Observable<boolean>;
 
 
 
-  constructor(private menuBarService: MenubarService, private panelsService:PanelsService) {}
+
+  constructor(private panelsService:PanelsService) {}
 
   ngOnInit(): void {
-    this.menuItems$ = this.menuBarService.getNodes(environment.menuItemsPath);
-    this.profileItems = [       {label: 'Add User', icon: 'pi pi-fw pi-user-plus'},
-      {label: 'Remove User', icon: 'pi pi-fw pi-user-minus'}]
-    this.leftPanelActive = this.panelsService.showLeftPanel$
+
 
   }
 

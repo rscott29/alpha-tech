@@ -16,11 +16,11 @@ const routes: Routes = [
         loadChildren:  () => import('./app-pages/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
-        path: 'settings',
+        path: 'shopping',
        //data: {label: 'Settings'},
 
 
-        loadChildren: () => import('./app-pages/settings/settings.module').then(m => m.SettingsModule)
+        loadChildren: () => import('./app-pages/shopping/settings.module').then(m => m.SettingsModule)
       },
 
     ]

@@ -20,6 +20,8 @@ import {RadioButtonModule} from "primeng/radiobutton";
 import {ToolbarModule} from "primeng/toolbar";
 import {CheckboxModule} from "primeng/checkbox";
 import {ToastModule} from 'primeng/toast';
+import {StyleClassModule} from "primeng/styleclass";
+import {BadgeModule} from "primeng/badge";
 
 
 
@@ -58,7 +60,9 @@ import {ToastModule} from 'primeng/toast';
     ToolbarModule,
     CheckboxModule,
     ToastModule,
-    ButtonModule
+    ButtonModule,
+    StyleClassModule,
+    BadgeModule
   ]
 })
 export class AppLayoutModule {

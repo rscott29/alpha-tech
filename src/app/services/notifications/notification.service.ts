@@ -93,6 +93,7 @@ export class NotificationService {
     this.zone.run(() => {
       this.messageService.clear();
       this.messageService.add({key: 'c', sticky: true, severity: 'warn', summary: 'New Data is Available!', detail: message})
+
     })
   }
 
@@ -119,13 +120,11 @@ export class NotificationService {
     })
   }
 
-  onConfirm() {
+  clearNotification() {
     this.messageService.clear('c');
   }
 
-  onReject() {
-    this.messageService.clear('c');
-  }
+
 
 
 }

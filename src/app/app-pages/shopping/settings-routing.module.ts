@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
-import {TestChildComponent} from "./test-child/test-child.component";
+import {ProductItemsComponent} from "./product-items/product-items.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    data: {label: 'Settings'},
+    data: {label: 'Shopping'},
     children: [
       {
-        path: 'test',
+        path: 'browse',
         data: {
-          label: 'Test'
+          label: 'Browse'
         },
-        component: TestChildComponent
+        component: ProductItemsComponent
       }
 
     ],

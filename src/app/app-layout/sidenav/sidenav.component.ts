@@ -1,7 +1,6 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {Sidebar} from "primeng/sidebar";
 import {PanelsService} from "../../panels.service";
-import {Observable} from "rxjs";
 
 
 @Component({
@@ -22,8 +21,8 @@ export class SidenavComponent implements AfterViewInit {
     routerLink: ["/dashboard"],
   },
     {
-      label: 'Settings', icon: 'pi pi-cog', routerLink: ['/settings'], items: [{
-        label: 'Test Page', icon: 'pi pi-upload', routerLink: ['settings/test']
+      label: 'Shopping', icon: 'pi pi-shopping-bag', routerLink: ['/shopping'], items: [{
+        label: 'Browse', icon: 'pi pi-list', routerLink: ['shopping/browse']
       }],
     }
   ];

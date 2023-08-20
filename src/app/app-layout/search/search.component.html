@@ -1,6 +1,6 @@
 <div class="search-container">
   <span class="search-span" (click)="toggleShowDiv()">
-     <i  class="pi pi-search search-button"></i>
+     <i  class="pi pi-search search-button p-element pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"></i>
       <input [(ngModel)]="searchString" [ngClass]="{'active-search': showSearch, 'no-background':!showSearch } "
              class="search-input"
              pInputText
